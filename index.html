@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ionic icons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <title>Video Player</title>
+  <script type="module" crossorigin src="/assets/index-40c4fa45.js"></script>
+  <link rel="stylesheet" href="/assets/index-38f33646.css">
+</head>
+
+<body>
+    <section class="bg-black h-[100vh] py-4 flex justify-center items-center flex-col">
+            <h1 class="text-green-500 text-4xl my-7 font-bold	">JS video player</h1>
+
+            <div class="container bg-slate-900 md:w-[50%] h-[50vh] rounded-t-md">
+                  <div class="video_container w-full h-4/5 bg-gray-100 rounded-t-md">
+                      <video src="/assets/video-fa943115.mp4" id="currentVideo" class="h-[100%] w-[100%] object-cover"></video>
+                  </div> 
+                  <div class="video_Btn_container w-full h-1/5">
+                    <div class="video_range">
+                        <input type="range"  value="0" max="100"
+                        class="
+                         w-[100%]
+                         border-0
+                         outline-0
+                         accent-green-600
+                         bg-transparent
+                         [&::-webkit-slider-runnable-track]:rounded-xl
+                       [&::-webkit-slider-runnable-track]:bg-gray-50/10 
+                         [&::-webkit-slider-thumb]:appearance-none 
+                         [&::-webkit-slider-thumb]:h-[10px] 
+                         [&::-webkit-slider-thumb]:w-[10px] 
+                         [&::-webkit-slider-thumb]:rounded-full
+                       [&::-webkit-slider-thumb]:bg-green-500
+                          cursor-grabbing"
+                         id="range">
+
+                        <div class="player_btn 
+                             mt-3
+                              w-[60%] 
+                              flex 
+                              items-center 
+                              ml-2 
+                              text-xl 
+                              cursor-pointer">
+                              <div class="mr-2">
+                                <ion-icon name="play-back" id="backMusicbtn" class="text-green-400 hover:text-green-600"></ion-icon>
+                              </div>
+                              <div>
+                                <ion-icon name="play-circle" id="playPauseBtn" class="text-green-400 hover:text-green-600"></ion-icon>
+                              </div>
+                              <div class="ml-2">
+                                <ion-icon name="play-forward" id="forwordMusicbtn" class="text-green-400 hover:text-green-600"></ion-icon>
+                              </div>
+                              <div class="ml-2 text-white text-[13px]">
+                                   <span id="currentTime">00:00</span>/ <span id="durationTime">00:00</span>
+                              </div>
+                        </div>
+                    </div>
+              </div> 
+            </div>  
+    </section>
+
+</body>
+</html>

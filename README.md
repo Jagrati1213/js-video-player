@@ -1,19 +1,19 @@
-# js-video-player
+# JS Video Player
 it's a little JS project related to some video functionality
 
-##Used Language 
+## Used Language 
 - HTML
 - Javascript
 
-##FrameWorks
+## FrameWorks
 - Tailwind CSS
 
-##Learned Things: 
+## Learned Things: 
 - Events like [ timeupdate, loadeddata, click, input]
 - play,pause function
 - backward, forward buttons function
 
-##Pending Works
+## Pending Works
 - onclick effects
 - keycode effects
 - animations

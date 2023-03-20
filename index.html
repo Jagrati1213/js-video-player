@@ -3,66 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <!-- ionic icons -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <title>Video Player</title>
-  <script type="module" crossorigin src="./assets/index-40c4fa45.js"></script>
-  <link rel="stylesheet" href="./assets/index-38f33646.css">
+  <script type="module" crossorigin src="./assets/index-7b1cd3cb.js"></script>
+  <link rel="stylesheet" href="./assets/index-75378d6c.css">
 </head>
+<style>
 
+#volumeRange{
+  width: 0%;
+  opacity: 0;
+  transition: all .3s;
+}
+#volumeBtn:hover #volumeRange{
+    opacity: 1;
+    width: 100%;
+    background: #0000003a;
+}
+.video_Btn_container{
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+.container:hover .video_Btn_container{
+  opacity: 1;
+  z-index: 111;
+}
+</style>
 <body>
+
     <section class="bg-black h-[100vh] py-4 flex justify-center items-center flex-col">
-            <h1 class="text-green-500 text-4xl my-7 font-bold	">JS video player</h1>
+      <div class="container bg-slate-900 lg:w-[50%]  rounded-lg relative">
 
-            <div class="container bg-slate-900 md:w-[50%] h-[50vh] rounded-t-md">
-                  <div class="video_container w-full h-4/5 bg-gray-100 rounded-t-md">
-                      <video src="./assets/video-fa943115.mp4" id="currentVideo"  preload="none" class="h-[100%] w-[100%] object-cover"></video>
-                  </div> 
-                  <div class="video_Btn_container w-full h-1/5">
-                    <div class="video_range">
-                        <input type="range"  value="0" max="100"
-                        class="
-                         w-[100%]
-                         border-0
-                         outline-0
-                         accent-green-600
-                         bg-transparent
-                         [&::-webkit-slider-runnable-track]:rounded-xl
-                       [&::-webkit-slider-runnable-track]:bg-gray-50/10 
-                         [&::-webkit-slider-thumb]:appearance-none 
-                         [&::-webkit-slider-thumb]:h-[10px] 
-                         [&::-webkit-slider-thumb]:w-[10px] 
-                         [&::-webkit-slider-thumb]:rounded-full
-                       [&::-webkit-slider-thumb]:bg-green-500
-                          cursor-grabbing"
-                         id="range">
+        <div id="video_container" class="w-full h-full bg-gray-100 rounded-t-lg rounded-b-lg">
+             <video src="./assets/movie-14d59f0d.mp4" id="currentVideo"  class="h-[100%] w-[100%] object-cover rounded-t-lg rounded-b-lg"></video>
+        </div> 
 
-                        <div class="player_btn 
-                             mt-3
-                              w-[60%] 
-                              flex 
-                              items-center 
-                              ml-2 
-                              text-xl 
-                              cursor-pointer">
-                              <div class="mr-2">
-                                <ion-icon name="play-back" id="backMusicbtn" class="text-green-400 hover:text-green-600"></ion-icon>
-                              </div>
-                              <div>
-                                <ion-icon name="play-circle" id="playPauseBtn" class="text-green-400 hover:text-green-600"></ion-icon>
-                              </div>
-                              <div class="ml-2">
-                                <ion-icon name="play-forward" id="forwordMusicbtn" class="text-green-400 hover:text-green-600"></ion-icon>
-                              </div>
-                              <div class="ml-2 text-white text-[13px]">
-                                   <span id="currentTime">00:00</span>/ <span id="durationTime">00:00</span>
-                              </div>
+        <div class="video_Btn_container w-full bg-[#000000b6] absolute bottom-0 pt-1 rounded-b-lg">
+
+              <div class="video_range flex flex-row items-center justify-evenly text-emerald-50 text-opacity-[0.3] text-sm">
+                          <span id="currentTime">00:00</span>
+                          <input type="range"  value="0" max="100" class="mx-2 min-w-[80%] h-[5px] border-0 outline-0 accent-green-600 bg-transparent [&::-webkit-slider-runnable-track]:h-[15px] [&::-webkit-slider-runnable-track]:rounded-xl [&::-webkit-slider-runnable-track]:bg-transparent [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-[10px] [&::-webkit-slider-thumb]:w-[10px] [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-green-500 cursor-grabbing" id="range">
+                          <span id="durationTime">00:00</span>
+              </div>
+
+              <div class="video_btn_box flex mt-1 justify-between w-[98%] mx-auto">
+                <div class="player_btn w-[60%] flex items-center ml-2 text-xl cursor-pointer">
+                  <div class="mr-2">
+                      <ion-icon name="play-back" id="backMusicbtn" class="text-green-600 hover:text-white"></ion-icon>
+                    </div>
+                    <div>
+                    <ion-icon name="play-circle" id="playPauseBtn" class="text-green-600 hover:text-white"></ion-icon>
+                    </div>
+                    <div class="ml-2">
+                      <ion-icon name="play-forward" id="forwordMusicbtn" class="text-green-600 hover:text-white"></ion-icon>
+                    </div>
+                </div>
+                <div class="sound_btn w-[40%] flex items-center justify-end mr-2 text-xl cursor-pointer ">
+                    <div class="mr-2 text-green-600 hover:text-white">
+                      <div id="volumeBtn" class="flex items-center justify-end">
+                        <ion-icon name="volume-high" id="volumeBtn2"></ion-icon>
+                          <input type="range"  value="100" max="100" class="w-[50%] h-[3px] border-0 outline-0 accent-white bg-red [&::-webkit-slider-runnable-track]:h-[15px] [&::-webkit-slider-runnable-track]:rounded-xl [&::-webkit-slider-runnable-track]:bg-transparent [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-[10px] [&::-webkit-slider-thumb]:w-[10px] [&::-webkit-slider-thumb]:rounded-full cursor-grabbing" id="volumeRange">
                         </div>
                     </div>
-              </div> 
-            </div>  
+                </div>
+              </div>  
+
+        </div> 
+      </div>  
     </section>
+
 
 </body>
 </html>

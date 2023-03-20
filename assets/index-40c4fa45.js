@@ -38,7 +38,7 @@ const a = document.getElementById("playPauseBtn"),
 a.addEventListener("click", (n) => {
   n.target.name === "play-circle"
     ? ((n.target.name = "pause-circle"), p())
-    : ((n.target.name = "play-circle"), g(n.target.name));
+    : ((n.target.name = "play-circle"), g());
 });
 function p() {
   i.play();

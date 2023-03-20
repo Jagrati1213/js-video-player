@@ -34,14 +34,18 @@ const a = document.getElementById("playPauseBtn"),
   i = document.getElementById("currentVideo"),
   l = document.getElementById("range"),
   m = document.getElementById("currentTime"),
-  f = document.getElementById("durationTime");
+  f = document.getElementById("durationTime"),
+  isplaying = i.currentTime > 0 && !i.paused && !i.ended && i.readyState;
+
 a.addEventListener("click", (n) => {
   n.target.name === "play-circle"
     ? ((n.target.name = "pause-circle"), p())
     : ((n.target.name = "play-circle"), g());
 });
 function p() {
-  i.play();
+  if(!isplaying){
+    i.play();
+  }
 }
 function g() {
   i.pause();
